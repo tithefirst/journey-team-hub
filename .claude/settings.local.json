@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcode-select -p)",
+      "Bash(git --version)",
+      "Bash(~/.local/bin/gh auth *)"
+    ]
+  }
+}
