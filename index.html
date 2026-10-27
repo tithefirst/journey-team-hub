@@ -472,10 +472,10 @@ const VN = {
   run: [
     ["6:00","Setup","Staff &amp; team leads","Worship practice wraps by 6:30 (Nina). Dessert out, Team Hub on the screen, leadership chart ready, dress code document printed."],
     ["6:30&ndash;6:50","Dessert and hanging out","Everyone","Dessert and coffee, not a meal. Nobody on the volunteer list serves. Staff work the room: sit with people, not with each other."],
-    ["6:50&ndash;7:00","Welcome, a little history, thank you by name","Pastor Jason","Gather everyone. Two or three minutes on where Journey came from and how far it has come (prompts below). Then thank the staff team and the volunteers by name, team by team, from the list below. Say plainly why they are here: this night is for them."],
-    ["7:00&ndash;7:07","Short devotional","Pastor Jason","Five to seven minutes. One passage, one idea, straight into prayer."],
-    ["7:07&ndash;7:15","Where Journey is headed","Pastor Jason","Vision for this season and 2027, the teaching plan through spring, and the big dates. See the talking points below."],
-    ["7:15&ndash;7:23","How we operate as a team","Pastor Jason, then any leader who wants to","Jason puts the leadership chart up and explains it in three minutes. Then open the floor to Nancy, Ryan, Nina and Elliot: anyone who wants to say something about their area and their volunteers gets 60 to 90 seconds. Optional, no pressure, and Jason tells them ahead of time so nobody is caught off guard. Not a report, a thank-you with a picture of where their team is going."],
+    ["6:50&ndash;7:02","Welcome, a little history, thank-yous","Pastor Jason, then each lead, then open floor","Jason: two or three minutes on where Journey came from and how far it has come (prompts below), and why they are here: this night is for them. Then the thank-yous come from the leads, not Jason: Nina (worship and tech), Cassi or Laura (Journey Kids), Pastor Nancy (prayer team), Elliot (greeting, hospitality, Sunday Table), about a minute each, naming their people from the list below. Jason closes it by asking the room live: anybody else want to say anything? Two or three minutes, no pre-arranging."],
+    ["7:02&ndash;7:09","Short devotional","Pastor Jason","Five to seven minutes. One passage, one idea, straight into prayer."],
+    ["7:09&ndash;7:17","Where Journey is headed","Pastor Jason","Vision for this season and 2027, the teaching plan through spring, and the big dates. See the talking points below."],
+    ["7:17&ndash;7:23","How we operate as a team","Pastor Jason","Jason puts the leadership chart up and explains it: who leads what, who volunteers go to, how decisions get made, how staff supports each team. Then the Team Hub in two minutes. The leads already had their moment in the thank-yous, so this stays with Jason."],
     ["7:23&ndash;7:27","House expectations &amp; Q&amp;A","Nina &amp; Pastor Nancy &middot; Pastor Jason","Nina &amp; Nancy introduce the worship platform dress code document. Phones away in the booth. Two or three questions, then Jason dismisses to breakouts and says where each team meets."],
     ["7:27&ndash;7:52","Ministry breakouts","Each team lead","Teams meet in their own spot. Every team leaves with a clear next step (below)."],
     ["7:52&ndash;8:00","Close and pray","Pastor Jason &amp; Pastor Nancy","Pull everyone back together. One sentence of thanks from Jason, Nancy prays over them, out the door at 8:00."]],
@@ -528,7 +528,7 @@ const VN = {
     ["Jason","One-page memo to staff on the night","Done when this tab is shared with staff"],
     ["Jason","Prayer guide for the prayer team","Carried over twice; needed for the breakout"],
     ["Jason","Devotional and talking points","Keep the front half under 40 minutes"],
-    ["Pastor Nancy, Pastor Ryan, Nina, Elliot","Decide whether you want 60 to 90 seconds on your team","Optional. Tell Jason by Thursday afternoon so he knows who is speaking"],
+    ["Nina, Cassi or Laura, Pastor Nancy, Elliot","Prepare your one-minute thank-you for your team","Name your people. Check the thank-you list and add anyone missing"],
     ["Nina","Invite graphic with time and date","Ministry heads collect their own headcount"],
     ["Nina","Move worship practice earlier that week","Ends by 6:30"],
     ["Nina &amp; Pastor Nancy","Worship platform dress code document","Printed copies for the worship breakout"],
@@ -539,7 +539,7 @@ const VN = {
     ["Each ministry head","Check the thank-you list for your team and send Jason any names missing","By Wednesday night"],
     ["Each ministry head","Bring your headcount and your team's next step","Fill in the breakout plan above"]],
   roles: [
-    ["Host &amp; MC","Pastor Jason"],["Team leader sharing (optional, 60 to 90 seconds)","Pastor Nancy, Pastor Ryan, Nina, Elliot"],["Closing prayer","Pastor Nancy"],["Worship (one song to open or close, optional)","Nina"],["Dessert &amp; room","Taylor &amp; Elliot"],["Screen (Team Hub, org chart)","Elliot"],["Photos for social","Chloe"],["Breakout leads","Nina, Elliot, Cassi, Pastor Nancy"]]
+    ["Host &amp; MC","Pastor Jason"],["Team thank-yous (one minute each)","Nina, Cassi or Laura, Pastor Nancy, Elliot"],["Open floor for volunteers","Pastor Jason asks live"],["Closing prayer","Pastor Nancy"],["Worship (one song to open or close, optional)","Nina"],["Dessert &amp; room","Taylor &amp; Elliot"],["Screen (Team Hub, org chart)","Elliot"],["Photos for social","Chloe"],["Breakout leads","Nina, Elliot, Cassi, Pastor Nancy"]]
 };
 const EVENTS = [["volnight","Volunteer Night"],["xmas","Christmas Eve"]];
 s = el("section","", `<h2>Special Events</h2>
@@ -547,13 +547,13 @@ s = el("section","", `<h2>Special Events</h2>
   <div class="evt active" data-evt="volnight">
   <h2 style="font-size:19px">Volunteer Appreciation Night</h2>
   <div class="banner"><div><b>Thursday, October 29 &middot; 6:30 to 8:00 PM</b><br><span style="opacity:.85;font-size:13px">Every volunteer, every team. Dessert and coffee, 90 minutes, out by 8:00. Ministry heads invited their own people and hold the headcount.</span></div><div style="text-align:right;font-weight:700">Host: Pastor Jason<br>Breakouts: team leads</div></div>
-  <div class="note">The point of the night, in order: make people feel appreciated, show them where Journey is going and how we operate as a team, then get each ministry team clear on its next step. Sharing is spread across the leaders, not just Jason. The front half stays under 40 minutes so the breakouts get 25.</div>
+  <div class="note">The point of the night, in order: make people feel appreciated, show them where Journey is going and how we operate as a team, then get each ministry team clear on its next step. The thank-yous come from the leads and the floor opens to volunteers, so it is not just Jason talking. The front half stays under 40 minutes so the breakouts get 25.</div>
   <h3>Run of show</h3>
   ${table(["Time","What","Who","Notes"], VN.run, r => r[1].indexOf("breakouts")>-1 ? "big" : "")}
   <h3>A little history &mdash; prompts for the welcome</h3>
   <ol class="open">${VN.history.map(x=>`<li>${x}</li>`).join("")}</ol>
   <h3>Thank you by name</h3>
-  <div class="note">Pulled from the roster and staff notes. Ministry heads: check your team against this before Thursday and add anyone missing, and tell Jason who will actually be in the room so nobody gets skipped.</div>
+  <div class="note">Each lead thanks their own team by name during the welcome. Pulled from the roster and staff notes, so check your team against this before Thursday and add anyone missing. Nobody gets skipped.</div>
   ${table(["Team","Names"], VN.thanks)}
   <h3>Where Journey is headed &mdash; talking points</h3>
   <div class="cards">${VN.headed.map(h=>`<div class="pillar"><h4>${h[0]}</h4><p>${h[1]}</p></div>`).join("")}</div>
